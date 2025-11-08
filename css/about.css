@@ -1,0 +1,257 @@
+/* === BACKGROUND (halaman penuh) === */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%; /* UBAH: dari height ke min-height */
+  font-family: sans-serif;
+  background: linear-gradient(135deg, #ffffff, #9dd9ff);
+  overflow-x: hidden; /* UBAH: agar tidak bisa scroll samping */
+  overflow-y: auto;   /* TAMBAH: agar bisa scroll ke bawah */
+}
+
+/* Frame */
+.frame {
+  width: 100vw;
+  min-height: 100vh; /* UBAH: dari height ke min-height */
+  padding: 25px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+/* === BARIS: Judul + Menu === */
+.header-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 6px;
+  margin-bottom: 8px;
+  z-index: 10;
+}
+
+/* Judul "pill" kiri atas */
+.page-title {
+  display: inline-block;
+  padding: 12px 45px;
+  font-size: 2rem;
+  font-weight: 700;
+  background: #9dd9ff;
+  border-radius: 14px 40px 40px 14px;
+  box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.35);
+  margin: 0;
+  white-space: nowrap; /* Biar tidak kepotong */
+}
+
+/* === MENU ATAS === */
+.top-menu {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+.top-menu button {
+  background-color: rgba(255, 255, 255, 0.33);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 100px;
+  padding: 8px 25px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: 0.2s;
+}
+.top-menu button:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+.top-menu .active {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+/* === PANEL BIRU BESAR === */
+.main-box {
+  width: 92%;
+  max-width: 1200px; /* Batas lebar maks */
+  margin: 20px auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 100px;
+  padding: 60px 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+  /* HAPUS overflow: hidden; */
+}
+
+/* === GRID 6 KOTAK FOTO === */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 160px);
+  gap: 50px;
+  justify-content: center;
+  margin-bottom: 22px;
+}
+
+/* Kartu anggota: foto + nama */
+.member {
+  width: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* TAMBAH: transisi untuk hover */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* TAMBAH: EFEK HOVER */
+.member:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 8px; /* Biar shadow rapi */
+}
+
+
+.photo {
+  width: 160px;
+  height: 160px;
+  background: #d9d9d9;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  background-size: cover;
+  background-position: center;
+}
+
+/* Nama di bawah foto */
+.name {
+  margin-top: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-align: center;
+  color: #123; 
+  line-height: 1.2;
+}
+
+/* Garis tipis di tengah */
+.thin-divider {
+  width: 70%;
+  height: 2px;
+  margin: 60px auto 24px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 2px;
+}
+
+/* === KONTAK KIRI & KANAN === */
+.contacts-row {
+  width: 70%;
+  margin: 30px auto 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+}
+
+/* === TOMBOL KEMBALI (di luar panel biru) === */
+.back {
+  margin-top: 10px; 
+  margin-left: 60px; 
+  align-self: flex-start;
+}
+
+.back button {
+  background: #9dd9ff;
+  border: none;
+  padding: 5.83px 24.4px;
+  border-radius: 40px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.back button:hover {
+  background: #81d4fa;
+}
+
+/* === KODE RESPONSif === */
+/* (Gabungan dari kode lama + perbaikan baru) */
+
+/* Untuk Tablet (1100px) */
+@media (max-width: 1100px) {
+  .photo-grid {
+    gap: 24px;
+    grid-template-columns: repeat(6, 110px);
+    margin-bottom: 40px;
+  }
+  .photo, .member {
+    width: 110px;
+  }
+  .photo {
+    height: 110px;
+  }
+}
+
+/* Untuk Tablet Kecil / HP Besar (900px) */
+@media (max-width: 900px) {
+  .frame {
+    padding: 15px; /* Kecilkan padding luar */
+  }
+  .header-bar {
+    flex-direction: column; /* Susun ke bawah */
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+  }
+  .page-title {
+    font-size: 1.5rem; /* Kecilkan judul */
+    padding: 10px 25px;
+  }
+  .top-menu {
+    justify-content: center; /* Tengahkan menu */
+    flex-wrap: wrap; /* Izinkan tombol turun */
+  }
+
+  .main-box {
+    width: 95%; /* Lebarkan sedikit */
+    padding: 30px 20px; /* Kecilkan padding */
+    border-radius: 50px;
+  }
+  .photo-grid {
+    grid-template-columns: repeat(3, 110px); /* 3 foto per baris */
+    gap: 20px;
+  }
+  .thin-divider, .contacts-row {
+    width: 90%; /* Lebarkan di mobile */
+  }
+  .contacts-row {
+    flex-direction: column; /* Susun ke bawah */
+    gap: 15px;
+  }
+  .back {
+    margin: 15px 0 0 0; /* Pindahkan ke tengah */
+    align-self: center;
+  }
+}
+
+/* Untuk HP Kecil (560px) */
+@media (max-width: 560px) {
+  .photo-grid {
+    grid-template-columns: repeat(2, 110px); /* 2 foto per baris */
+    gap: 25px;
+  }
+  .page-title {
+    font-size: 1.2rem;
+  }
+}
+
+/* Sembunyikan "Tentang kami" di dalam panel */
+.main-box .page-title,
+.about-card .page-title,
+.main-box .section-title,
+.about-card .section-title {
+  display: none !important;
+}
+
+/* Pastikan judul di header tetap tampil */
+.header-bar .page-title,
+.header-bar .section-title {
+  display: inline-block;
+}

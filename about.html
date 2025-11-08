@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tentang Kami</title>
+    <link rel="stylesheet" href="css/about.css" />
+  </head>
+  <body>
+    <div class="frame">
+      <!-- MENU ATAS -->
+      <div class="header-bar">
+        <div class="page-title">Tentang kami</div>
+        <div class="top-menu">
+          <button class="nav-btn" onclick="window.location.href='pilihmateri.html'">Materi</button>
+          <button class="nav-btn" onclick="window.location.href='proses.html'">Simulasi</button>
+          <button class="nav-btn" onclick="window.location.href='about.html'">Kami</button>
+        </div>
+      </div>
+
+      <!-- PANEL BIRU BESAR -->
+      <div class="main-box about">
+        <h1 class="page-title">Tentang kami</h1>
+
+        <!-- 6 kotak foto -->
+        <div class="photo-grid">
+          <div class="member">
+            <div
+              class="photo"
+              style="background-image: url('img/bima.png')"
+            ></div>
+            <div class="name">Bimantara P Jatnika</div>
+          </div>
+
+          <div class="member">
+            <div
+              class="photo"
+              style="background-image: url('img/anggota-2.jpg')"
+            ></div>
+            <div class="name">Nama 2</div>
+          </div>
+
+          <div class="member">
+            <div
+              class="photo"
+              style="background-image: url('img/anggota-3.jpg')"
+            ></div>
+            <div class="name">Nama 3</div>
+          </div>
+
+          <div class="member">
+            <div
+              class="photo"
+              style="background-image: url('img/anggota-4.jpg')"
+            ></div>
+            <div class="name">Nama 4</div>
+          </div>
+
+          <div class="member">
+            <div
+              class="photo"
+              style="background-image: url('img/anggota-5.jpg')"
+            ></div>
+            <div class="name">Nama 5</div>
+          </div>
+
+          <div class="member">
+            <div
+              class="photo"
+              style="background-image: url('img/anggota-6.jpg')"
+            ></div>
+            <div class="name">Nama 6</div>
+          </div>
+        </div>
+
+        <!-- Garis tipis di tengah -->
+        <div class="thin-divider"></div>
+
+        <!-- Teks kontak kiri & kanan -->
+        <div class="contacts-row">
+          <span>Kontak</span>
+          <span>Kontak</span>
+        </div>
+      </div>
+
+      <!-- TOMBOL KEMBALI -->
+      <div class="back">
+        <button id="back-button">Kembali</button>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById("back-button")?.addEventListener("click", () => {
+        history.back();
+      });
+    </script>
+  </body>
+</html>

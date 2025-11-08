@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Materi Penjadwalan</title>
+  <link rel="stylesheet" href="css/materi.css" />
+</head>
+<body>
+  <div class="page-container">
+    <div class="header-bar">
+      <div class="page-title">Materi</div> 
+      <div class="top-menu"> 
+        <button class="nav-btn" onclick="window.location.href='pilihmateri.html'">Materi</button>
+        <button class="nav-btn" onclick="window.location.href='proses.html'">Proses</button>
+        <button class="nav-btn" onclick="window.location.href='about.html'">Kami</button>
+      </div>
+    </div>
+
+    <div class="content-card">
+      <div class="main-content-wrapper">
+        <div class="algorithm-list">
+          <span class="alg-item" id="btn-fcfs">FCFS</span>
+          <span class="alg-item" id="btn-sjf">SJF</span>
+          <span class="alg-item" id="btn-rr">RR</span>
+        </div>
+
+        <div class="algorithm-details" id="content-fcfs">
+          <p>FCFS (First-Come, First-Served): Paling sederhana.</p>
+          <p>
+            Proses dieksekusi sesuai urutan kedatangan. Adil namun tidak
+            efisien; rentan terhadap proses panjang yang memblokir proses
+            pendek (Convoy Effect).
+          </p>
+        </div>
+
+        <div class="algorithm-details hidden" id="content-sjf">
+          <p>
+            SJF (Shortest Job First): Paling efisien. Prioritas diberikan pada
+            proses dengan waktu eksekusi terpendek.
+          </p>
+          <p>
+            Memberikan Waiting Time rata-rata terendah, tetapi sulit
+            diterapkan karena OS harus memprediksi durasi proses, dan berisiko
+            menyebabkan proses panjang kelaparan (starvation).
+          </p>
+        </div>
+
+        <div class="algorithm-details hidden" id="content-rr">
+          <p>
+            Round Robin (RR): Terbaik untuk sistem interaktif. Setiap proses
+            mendapat jatah waktu tetap (Quantum) secara bergiliran. Menjamin
+            keadilan dan respons cepat, tetapi menghasilkan overhead tinggi
+            akibat seringnya context switching.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="back">
+        <button id="back-button">Kembali</button>
+      </div>
+
+    <script>
+      document.getElementById("back-button")?.addEventListener("click", () => {
+        history.back();
+      });
+    </script>
+  </div>
+
+  <script src="/js/materi.js"></script>
+</body>
+</html>

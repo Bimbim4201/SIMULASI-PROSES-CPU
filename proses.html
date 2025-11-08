@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scheduling Method</title>
+    <link rel="stylesheet" href="css/proses.css" />
+  </head>
+  <body>
+    <div class="frame">
+      <!-- MENU ATAS -->
+      <div class="header-bar">
+        <div class="page-title">Simulasi</div>
+      <div class="top-menu">
+      <button class="nav-btn" onclick="window.location.href='pilihmateri.html'">Materi</button>
+      <button class="nav-btn" onclick="window.location.href='proses.html'">Simulasi</button>
+      <button class="nav-btn" onclick="window.location.href='about.html'">Kami</button>
+    </div>
+      </div>
+
+      <div class="title">Pilih Metode di bawah</div>
+
+      <div class="main-box">
+        <div class="methods">
+          <a href="#" id="link-fcfs">FCFS</a>
+          <a href="#" id="link-sjf">SJF</a>
+          <a href="#" id="link-rr">RR</a>
+        </div>
+
+        <div class="content-display">
+          <div class="tabel-proses" id="initial-input">
+            <table>
+              <tr>
+                <th>Proses</th>
+                <th>Burst Time</th>
+              </tr>
+              <tr>
+                <td>P1</td>
+                <td>
+                  <input
+                    type="number"
+                    min="0"
+                    max="100"
+                    value="0"
+                    class="burst-time-input"
+                    data-process="P1"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>P2</td>
+                <td>
+                  <input
+                    type="number"
+                    min="0"
+                    max="100"
+                    value="0"
+                    class="burst-time-input"
+                    data-process="P2"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>P3</td>
+                <td>
+                  <input
+                    type="number"
+                    min="0"
+                    max="100"
+                    value="0"
+                    class="burst-time-input"
+                    data-process="P3"
+                  />
+                </td>
+              </tr>
+            </table>
+          </div>
+
+          <div class="result-section hidden" id="result-fcfs">
+            <div class="result-table">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Proses</th>
+                    <th>BT</th>
+                    <th>WT</th>
+                    <th>TAT</th>
+                  </tr>
+                </thead>
+                <tbody id="table-body-fcfs"></tbody>
+                <tfoot>
+                  <tr>
+                    <td colspan="2">Rata-rata</td>
+                    <td id="avg-wt-fcfs"></td>
+                    <td id="avg-tat-fcfs"></td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+            <h3>Diagram Gantt Chart</h3>
+            <div class="gantt-chart">
+              <div class="gantt-row" id="gantt-row-fcfs"></div>
+              <div class="gantt-times" id="gantt-times-fcfs"></div>
+            </div>
+          </div>
+
+          <div class="result-section hidden" id="result-sjf">
+            <div class="result-table">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Proses</th>
+                    <th>BT</th>
+                    <th>WT</th>
+                    <th>TAT</th>
+                  </tr>
+                </thead>
+                <tbody id="table-body-sjf"></tbody>
+                <tfoot>
+                  <tr>
+                    <td colspan="2">Rata-rata</td>
+                    <td id="avg-wt-sjf"></td>
+                    <td id="avg-tat-sjf"></td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+            <h3>Diagram Gantt Chart</h3>
+            <div class="gantt-chart">
+              <div class="gantt-row" id="gantt-row-sjf"></div>
+              <div class="gantt-times" id="gantt-times-sjf"></div>
+            </div>
+          </div>
+
+          <div class="rr-input hidden" id="input-rr-quantum">
+            <div class="rr-form">
+              <h3>Masukkan Time Quantum :</h3>
+              <input
+                type="number"
+                min="1"
+                max="100"
+                value="4"
+                id="time-quantum-input"
+              />
+              <button id="hitung-rr-button">Hitung</button>
+            </div>
+          </div>
+
+          <div class="result-section hidden" id="result-rr">
+            <div class="result-table">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Proses</th>
+                    <th>BT</th>
+                    <th>WT</th>
+                    <th>TAT</th>
+                  </tr>
+                </thead>
+                <tbody id="table-body-rr"></tbody>
+                <tfoot>
+                  <tr>
+                    <td colspan="2">Rata-rata</td>
+                    <td id="avg-wt-rr"></td>
+                    <td id="avg-tat-rr"></td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+            <h3>Diagram Gantt Chart</h3>
+            <div class="gantt-chart">
+              <div class="gantt-row" id="gantt-row-rr"></div>
+              <div class="gantt-times" id="gantt-times-rr"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="back">
+        <button id="back-button">Kembali</button>
+      </div>
+    </div>
+    <script>
+      document.getElementById("back-button")?.addEventListener("click", () => {
+        history.back();
+      });
+    </script>
+    <script src="js/proses.js"></script>
+  </body>
+</html>
