@@ -89,7 +89,7 @@ body {
   cursor: pointer;
   transition: transform 0.3s ease, height 0.3s ease, margin 0.3s ease;
 
-  background-image: url("/img/bgindex.png");
+  background-image: url("bgindex.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: calc(50% - 20px) 50%; 
@@ -123,4 +123,5 @@ body {
     padding: 10px 25px;
     margin-top: 30px; /* Beri jarak lebih dari judul */
   }
+
 }
