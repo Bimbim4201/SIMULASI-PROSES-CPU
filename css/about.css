@@ -86,14 +86,14 @@ body {
 .photo-grid {
   display: grid;
   grid-template-columns: repeat(6, 160px);
-  gap: 50px;
+  gap: 30px;
   justify-content: center;
   margin-bottom: 22px;
 }
 
 /* Kartu anggota: foto + nama */
 .member {
-  width: 160px;
+  width: 130px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -110,15 +110,44 @@ body {
 
 
 .photo {
-  width: 160px;
-  height: 160px;
-  background: #d9d9d9;
-  border-radius: 8px;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  position: relative; /* wajib untuk overlay */
+  overflow: hidden;
+  width: 130px;
+  height: 130px;
+  background: #fff;
+  padding: 6px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   background-size: cover;
   background-position: center;
 }
+
+/* === IG OVERLAY DI POJOK FOTO === */
+.ig-overlay {
+  position: absolute;
+  bottom: 6px;
+  right: 6px;
+  background: rgba(0, 0, 0, 0.55);
+  padding: 6px 7px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: 0.25s ease-in-out;
+}
+
+.ig-overlay i {
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+/* Muncul ketika foto di hover */
+.photo:hover .ig-overlay {
+  opacity: 1;
+  transform: scale(1.15);
+}
+
 
 /* Nama di bawah foto */
 .name {
@@ -141,12 +170,11 @@ body {
 
 /* === KONTAK KIRI & KANAN === */
 .contacts-row {
-  width: 70%;
-  margin: 30px auto 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-weight: 600;
+  text-align: center;
+  font-size: 1.4rem;   /* ukuran besar */
+  font-weight: 700;    /* tebal */
+  margin-top: 20px;    /* jarak dari atas */
+  color: #123;         /* warna biru kehitaman biar match tema */
 }
 
 /* === TOMBOL KEMBALI (di luar panel biru) === */
@@ -170,6 +198,9 @@ body {
 .back button:hover {
   background: #81d4fa;
 }
+
+
+
 
 /* === KODE RESPONSif === */
 /* (Gabungan dari kode lama + perbaikan baru) */
