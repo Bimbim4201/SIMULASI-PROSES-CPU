@@ -37,15 +37,15 @@ body {
   display: inline-block; 
 }
 
-.title .s {
-  position: absolute;
-  left: -1.2rem; 
-  top: -0.25rem; 
+.title-main::first-letter {
   font-family: "Mea Culpa", cursive;
-  font-size: 5.5rem;
-  line-height: 1;
-  pointer-events: none;
+  font-size: 5rem;
+  margin-right: 0.25rem;
+  position: relative;
+  top: 0.2rem;
 }
+
+
 
 .title .subtext {
   display: block;
@@ -96,28 +96,28 @@ body {
   background-color: transparent;
 }
 
-/* FIX RESPONSIF UNTUK MOBILE */
+/* Responsif (KODE LAMA DIPERBAIKI) */
 @media (max-width: 600px) {
-
   .title {
-    font-size: 1.8rem !important;
+    font-size: 2.2rem;
   }
 
-  .title .s {
-    font-size: 3.2rem !important;   /* DARI 5.5rem → 3.2rem */
-    left: -0.5rem !important;       /* rapikan posisi */
-    top: -0.2rem !important;
+  .title-main::first-letter {
+    font-size: 3.2rem;
+    top: 0.1rem;
   }
 
   .title .subtext {
-    font-size: 1.5rem !important;
-    letter-spacing: 0.3rem !important; /* DARI 2.2rem → 0.3rem */
-    margin-top: 0.5rem;
+    font-size: 2rem;
+    letter-spacing: 0.5rem; /* UBAH: Dikecilkan drastis dari 1rem */
   }
 
   .image-placeholder {
-    height: 220px !important;
-    margin: 0 auto 10px !important;
+    /* UBAH: Kecilkan tinggi gambar & ubah margin negatif jadi positif */
+    height: 250px; 
+    max-height: 40vh;
+    margin: 0 auto 15px; /* DARI -40px JADI 15px */
+    background-position: calc(50% - 10px) 50%;
   }
 
   .button {
