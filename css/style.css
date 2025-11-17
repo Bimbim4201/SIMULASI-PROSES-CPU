@@ -89,33 +89,35 @@ body {
   cursor: pointer;
   transition: transform 0.3s ease, height 0.3s ease, margin 0.3s ease;
 
-  background-image: url("../img/bgindex.png");
+  background-image: url("/img/bgindex.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: calc(50% - 20px) 50%; 
   background-color: transparent;
 }
 
-/* Responsif (KODE LAMA DIPERBAIKI) */
+/* FIX RESPONSIF UNTUK MOBILE */
 @media (max-width: 600px) {
+
   .title {
-    font-size: 2.2rem;
+    font-size: 1.8rem !important;
   }
+
   .title .s {
-    left: -0.8rem;
-    font-size: 4rem;
+    font-size: 3.2rem !important;   /* DARI 5.5rem → 3.2rem */
+    left: -0.5rem !important;       /* rapikan posisi */
+    top: -0.2rem !important;
   }
+
   .title .subtext {
-    font-size: 2rem;
-    letter-spacing: 0.5rem; /* UBAH: Dikecilkan drastis dari 1rem */
+    font-size: 1.5rem !important;
+    letter-spacing: 0.3rem !important; /* DARI 2.2rem → 0.3rem */
+    margin-top: 0.5rem;
   }
 
   .image-placeholder {
-    /* UBAH: Kecilkan tinggi gambar & ubah margin negatif jadi positif */
-    height: 250px; 
-    max-height: 40vh;
-    margin: 0 auto 15px; /* DARI -40px JADI 15px */
-    background-position: calc(50% - 10px) 50%;
+    height: 220px !important;
+    margin: 0 auto 10px !important;
   }
 
   .button {
