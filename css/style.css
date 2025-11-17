@@ -105,6 +105,10 @@ body {
   .title-main::first-letter {
     font-size: 3.2rem;
     top: 0.1rem;
+    font-family: "Mea Culpa", cursive;
+    margin-right: 0.25rem;
+    position: relative;
+
   }
 
   .title .subtext {
